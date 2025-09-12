@@ -1,0 +1,77 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style2.css">
+    <title>Document</title>
+ </head>
+ <body>
+   <div class="container">
+  <!-- Form Section -->
+  <div class="form-container">
+    <h2>Add New Product</h2>
+
+    <input type="text" id="image" placeholder="Image URL">
+    <input type="text" id="title" placeholder="Product Title">
+    <textarea id="description" placeholder="Product Description"></textarea>
+    <input type="number" id="price" placeholder="Price ($)">
+
+    <button onclick="addProduct()">Submit</button>
+  </div>
+
+  <!-- Table Section -->
+  <div class="table-container">
+    <h2>Product List</h2>
+    <table id="productTable">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody id="showProducts">
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+    let products = [];
+
+    function addProduct(){
+        let title = document.getElementById('title').value;
+        let image = document.getElementById('image').value;
+        let description = document.getElementById('description').value;
+        let price = document.getElementById('price').value;
+
+        let obj = {
+            title:title,
+            image:image,
+            description:description,
+            price:price
+        }
+        products.push(obj);
+        document.getElementById('showProducts').innerHTML = "";
+        
+     
+        products.forEach((e)=>{
+        let show = document.getElementById('showProducts')
+           show.innerHTML += `
+              <tr>
+                <td><img src="${e.image}"></td>
+                <td>${e.title}</td>
+                <td>${e.description}</td>
+                <td>${e.price}</td>
+             </tr>
+           `;
+        })
+        
+    }
+</script>
+
+</body>
+</html>

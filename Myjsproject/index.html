@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>My project</title>
+</head>
+<body>
+   <div class="login-container" id="form">
+     <input type="email" id="email" placeholder="Email" />
+     <input type="password" id="password" placeholder="Password" />
+     <div class="btns">
+        <button id="login" onclick="login()">Login</button>
+        <button id="reset" onclick="reset()">reset password</button>
+     </div>
+  </div>
+
+  <script>
+    let user = {
+        email:'test@gmail.com',
+        password:'123456'
+    };
+
+     
+    function login(){
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+
+        if(email == user.email){
+            if(password == user.password){
+                window.location = 'addProduct.html';
+            }else{
+                alert('Incorrect password');
+                return false;
+            }
+        }else{
+            alert('Enter valid email');
+            return false;
+        }
+    }
+
+    function reset(){
+        let form = document.getElementById('form');
+        form.innerHTML = "";
+        form.innerHTML = `
+         
+           <input type="password" id="confirm" placeholder="confirm password" />
+           <button id="login" onclick="confirm()">Login</button>
+       
+        `;
+
+    }
+  function confirm(){
+    let confirm = document.getElementById('confirm').value;
+    if(confirm == user.password){
+        let form = document.getElementById('form');
+        form.innerHTML = "";
+        form.innerHTML = `
+         
+           <input type="password" id="newpassword" placeholder="new password" />
+           <input type="password" id="confirmnewpassword" placeholder="confirm password" />
+           <button id="login" onclick="newpassword()">Login</button>
+        
+        `;
+    }else{
+        alert('Incorrect confirm password');
+        return false;
+    }
+  }
+
+  function newpassword(){
+    let newPassword = document.getElementById('newpassword').value;
+    let confirmPassword = document.getElementById('confirmnewpassword').value;
+
+    if(newPassword == confirmPassword){
+        user.password = newPassword;
+        alert('your new password is ' + newPassword);
+         let form = document.getElementById('form');
+        form.innerHTML = "";
+        form.innerHTML = `
+         <input type="email" id="email" placeholder="Email" />
+         <input type="password" id="password" placeholder="Password" />
+         <div class="btns">
+           <button id="login" onclick="login()">Login</button>
+           <button id="reset" onclick="reset()">reset password</button>
+         </div>
+       
+        `;
+    }else{
+        alert('password not matche');
+        return flase;
+    }
+    
+  }
+
+
+  </script>
+
+</body>
+</html>
