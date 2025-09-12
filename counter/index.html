@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter using javascript</title>
+     <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    button {
+      font-size: 24px;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+   .add{
+    background-color: green;    
+   }
+   .sub{
+    background-color: red;    
+   }
+
+    h2 {
+      font-size: 48px;
+      margin: 20px 0;
+      color: #333;
+    }
+
+  </style>
+</head>
+<body>
+     <div class="container">
+        <button onclick="sub()" class="sub">-</button>
+        <h2 id="count">0</h2>
+        <button onclick="add()" class="add">+</button>
+     </div>
+
+     <script>
+        let count = 0;
+
+        function add(){
+           count++;
+           document.getElementById('count').innerText = count;
+        }
+
+         function sub(){
+            if(count > 0){
+              count--;
+              document.getElementById('count').innerText = count;
+            }
+           
+        }
+     </script>
+
+</body>
+</html>
