@@ -132,6 +132,7 @@ function addMore(){
   function download(){
       let invoice = document.getElementsByClassName('invoice-box');
       document.body.innerHTML = '<div class="invoice-box">'+invoice[0].innerHTML+'</div>'
-      window.print(invoice)
+      window.print()
   } 
   
+
