@@ -126,7 +126,12 @@ function addMore(){
           total += e.price * e.qty + gst  
          })   
         document.getElementById('total').innerHTML = '&#8377; '+total  
+        document.getElementsByClassName('download')[0].style.display = 'block'
     }
 
-  
+  function download(){
+      let invoice = document.getElementsByClassName('invoice-box');
+      document.body.innerHTML = '<div class="invoice-box">'+invoice[0].innerHTML+'</div>'
+      window.print(invoice)
+  } 
   
