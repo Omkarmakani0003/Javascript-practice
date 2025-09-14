@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+     <div class="invoice-form-box">
+    <h1>Invoice Form</h1>
+    <form action="submit_invoice.php" method="POST">
+
+      <section class="customer-details">
+        <h3>Bill To</h3>
+        <label for="customer_name">Customer Name:</label>
+        <input type="text" id="customer_name" required>
+
+        <label for="customer_email">Email:</label>
+        <input type="text" id="customer_email"  required>
+
+        <label for="customer_address">Customer Address:</label>
+        <input type="text" id="customer_address" required>
+
+      </section>
+ 
+      <section class="items" id="form">
+        
+        <div class="item">
+         <h3>Items</h3>
+          <div class="form_field">
+            <label for="product">product:</label>
+            <input type="text" id="product" name="product[]" required>
+          </div>
+          <div class="form_field">
+            <label >Quantity:</label>
+            <input type="number" id="qty" name="qty[]" required>
+          </div>
+          <div class="form_field">
+             <label >Description:</label>
+             <input type="text" id="desc" name="desc[]" required>
+          </div>
+          <div class="form_field">
+            <label >Unit Price:</label>
+            <input type="number" step="0.01" id="unit_price" name="unit_price[]" required>
+          </div>
+        </div>
+      </section>
+      <div class="btns">
+        <button type="button" class="addmore" onclick="addMore()">+</button>
+        <button type="button" class="addmore" onclick="remove()">-</button>
+      </div>
+      <button type="button" onclick="generate()">Generate Invoice</button>
+    </form>
+  </div>
+  <div class="invoice-box">
+    <header>
+      <div class="company-details">
+        <h1>My Invoice</h1>
+        <p>1234 Company St, <br>Company Town, ST 12345</p>
+      </div>
+    </header>
+
+    <h2 class="invoice-title">INVOICE</h2>
+
+    <section class="invoice-details">
+       <span>Invoice Date : </span><span id="invoiceDate"></span>
+    </section>
+
+    <section class="bill-to">
+      <h3>Bill To</h3>
+      <p>Customer Name : <span id="name"></span><br>
+      Email : <span id="email"></span><br>
+      address : <span id="address"></span></p>
+    </section>
+
+    <section class="items">
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Description</th>
+            <th>QTY</th>
+            <th>Unit Price</th>
+            <th>GST</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody id="items">
+          
+          
+        </tbody>
+      </table>
+    </section>
+
+    <section class="totals">
+      <table>
+        <tr class="total"><td>Total amount :</td><td><span id="total"></span></td></tr>
+      </table>
+    </section>
+
+  </div>
+
+<script>
+    function addMore(){
+        let form = document.getElementById('form') 
+        form.innerHTML += `
+        <div class="item" >
+         <h3>Items</h3>
+          <div class="form_field">
+            <label for="product">product:</label>
+            <input type="text" id="product" name="product[]" required>
+          </div>
+          <div class="form_field">
+            <label >Quantity:</label>
+            <input type="number" id="qty" name="qty[]" required>
+          </div>
+          <div class="form_field">
+             <label >Description:</label>
+             <input type="text" id="desc"name="desc[]" required>
+          </div>
+          <div class="form_field">
+            <label >Unit Price:</label>
+            <input type="number" step="0.01" id="unit_price" name="unit_price[]" required>
+          </div>
+        </div>`
+    }
+
+    function remove(){
+        let form = document.getElementById('form')
+         if(form.children.length > 1){
+           form.removeChild(form.lastElementChild)          
+        }   
+    }
+
+    function generate(){
+
+        let cName = document.getElementById('customer_name').value
+        let email = document.getElementById('customer_email').value
+        let address = document.getElementById('customer_address').value
+        let product = document.getElementsByName('product[]')
+        let qty = document.getElementsByName('qty[]')
+        let description = document.getElementsByName('desc[]')
+        let unit_price = document.getElementsByName('unit_price[]')
+        
+        if(cName == "" || cName == null || cName == undefined) {
+           alert('Customer name is required');
+           return false
+        }
+        if(email == "" || email == null || email == undefined) {
+           alert('Customer email is required');
+           return false
+        }
+        if(address == "" || address == null || address == undefined) {
+           alert('Customer address  is required');
+           return false
+        }
+
+        let obj_pro = []
+        let obj_qty = []
+        let obj_des = []
+        let obj_price = []
+
+        let mainobj = []
+
+        product.forEach(e => {
+           if(e.value == "" || e.value == null || e.value == undefined) {
+             alert('product field is required');
+             return false;
+           }else{
+             obj_pro.push(e.value);
+           }
+        });
+        qty.forEach(e => {
+          if(e.value == "" || e.value == null || e.value == undefined) {
+           alert('qty field is required');
+           return false;
+          }else{
+            obj_qty.push(e.value);
+          } 
+        });
+        description.forEach(e => {
+          if(e.value == "" || e.value == null || e.value == undefined) {
+           alert('description field is required');
+           return false;
+          }else{
+            obj_des.push(e.value);
+          }
+        });
+        unit_price.forEach(e => {
+          if(e.value == "" || e.value == null || e.value == undefined) {
+           alert('price field is required');
+           return false;
+          }else{
+            obj_price.push(e.value);
+          }
+        });
+
+        obj_pro.forEach((product,i) => {
+           mainobj.push({
+              product : product,
+              qty : obj_qty[i],
+              description : obj_des[i],
+              price : obj_price[i] 
+           }) 
+        })
+    
+      let date = new Date();
+      document.getElementById('invoiceDate').innerText = date.toLocaleDateString();
+        
+      document.getElementById('name').innerText = cName 
+      document.getElementById('email').innerText = email 
+      document.getElementById('address').innerText = address 
+
+      document.getElementById('items').innerHTML = ''
+       let total = 0
+        mainobj.forEach(e => {
+          let gst = e.price * 18 / 100;
+          document.getElementById('items').innerHTML += `
+            <tr>
+               <td>${e.product}</td>
+               <td>${e.description}</td>
+               <td>${e.qty}</td>
+               <td>&#8377; ${e.price}</td>
+               <td>18 <span>%</span></td>
+               <td>&#8377; ${e.price * e.qty + gst}</td>
+            </tr>
+          `
+          document.getElementById('total').innerText = ''
+          total += e.price * e.qty + gst  
+         })   
+        document.getElementById('total').innerHTML = '&#8377; '+total  
+    }
+
+  
+  
+    
+</script>  
+
+</body>
+</html>
