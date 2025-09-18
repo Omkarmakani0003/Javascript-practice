@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>LOGO</h1>
+        </div>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products, brands and more...">
+            <button class="btn" id="search"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="icons">
+            <a href="#"><i class="fa fa-shopping-cart" style="font-size:24px"></i></a>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="filters">
+            <h3>Categories</h3>
+            <ul>
+                <li><a href="#">Tshirts</a></li>
+                <li><a href="#">Lounge Tshirts</a></li>
+                <li><a href="#">Jeans</a></li>
+                <li><a href="#">Shirts</a></li>
+                <li><a href="#">Jackets</a></li>
+            </ul>
+            <h3>Brand</h3>
+            <ul>
+                <li><input type="checkbox" id="woostro"><label for="woostro">WOOSTRO</label></li>
+                <li><input type="checkbox" id="greylong"><label for="greylong">Greylong</label></li>
+                <li><input type="checkbox" id="roadster"><label for="roadster">Roadster</label></li>
+            </ul>
+            <h3>Price</h3>
+            <input type="range" min="0" max="10000" step="500">
+        </div>
+
+        <div class="product-list" id="product-list">
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Myntra. All rights reserved.</p>
+    </footer>
+ 
+<script src="./js/script.js"></script>    
+</body>
+</html>
