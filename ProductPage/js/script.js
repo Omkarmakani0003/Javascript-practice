@@ -9,7 +9,7 @@ const products = [
     "originalPrice": 99.99,
     "discount": 20,
     "rating": 4.5,
-    "review": 253
+    "stock": 253
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@ const products = [
     "originalPrice": 89.99,
     "discount": 33,
     "rating": 4.2,
-    "review": 178
+    "stock": 178
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@ const products = [
     "originalPrice": 149.99,
     "discount": 13,
     "rating": 4.7,
-    "review": 421
+    "stock": 421
   },
   {
     "id": 4,
@@ -45,7 +45,7 @@ const products = [
     "originalPrice": 49.99,
     "discount": 40,
     "rating": 4.3,
-    "review": 97
+    "stock": 97
   },
   {
     "id": 5,
@@ -57,19 +57,19 @@ const products = [
     "originalPrice": 34.99,
     "discount": 29,
     "rating": 4.6,
-    "review": 132
+    "stock": 132
   },
   {
     "id": 6,
     "name": "Coffee Maker",
-    "category": "Home Appliances",
+    "category": "Home",
     "description": "Automatic drip coffee maker with timer.",
     "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
     "price": 49.99,
     "originalPrice": 69.99,
     "discount": 29,
     "rating": 4.1,
-    "review": 88
+    "stock": 88
   },
   {
     "id": 7,
@@ -81,7 +81,7 @@ const products = [
     "originalPrice": 44.99,
     "discount": 22,
     "rating": 4.4,
-    "review": 109
+    "stock": 109
   },
   {
     "id": 8,
@@ -93,7 +93,7 @@ const products = [
     "originalPrice": 349.99,
     "discount": 14,
     "rating": 4.8,
-    "review": 223
+    "stock": 223
   },
   {
     "id": 9,
@@ -105,7 +105,7 @@ const products = [
     "originalPrice": 59.99,
     "discount": 33,
     "rating": 4.5,
-    "review": 156
+    "stock": 156
   },
   {
     "id": 10,
@@ -117,7 +117,7 @@ const products = [
     "originalPrice": 35.99,
     "discount": 28,
     "rating": 4.3,
-    "review": 201
+    "stock": 201
   },
   {
     "id": 11,
@@ -129,7 +129,7 @@ const products = [
     "originalPrice": 64.99,
     "discount": 31,
     "rating": 4.2,
-    "review": 178
+    "stock": 178
   },
   {
     "id": 12,
@@ -141,7 +141,7 @@ const products = [
     "originalPrice": 49.99,
     "discount": 20,
     "rating": 4.6,
-    "review": 210
+    "stock": 210
   },
   {
     "id": 13,
@@ -153,7 +153,7 @@ const products = [
     "originalPrice": 29.99,
     "discount": 33,
     "rating": 4.4,
-    "review": 90
+    "stock": 90
   },
   {
     "id": 14,
@@ -165,7 +165,7 @@ const products = [
     "originalPrice": 109.99,
     "discount": 18,
     "rating": 4.7,
-    "review": 312
+    "stock": 312
   },
   {
     "id": 15,
@@ -177,7 +177,7 @@ const products = [
     "originalPrice": 24.99,
     "discount": 28,
     "rating": 4.5,
-    "review": 76
+    "stock": 76
   },
   {
     "id": 16,
@@ -189,7 +189,7 @@ const products = [
     "originalPrice": 129.99,
     "discount": 23,
     "rating": 4.6,
-    "review": 342
+    "stock": 342
   },
   {
     "id": 17,
@@ -201,7 +201,7 @@ const products = [
     "originalPrice": 39.99,
     "discount": 25,
     "rating": 4.3,
-    "review": 105
+    "stock": 105
   },
   {
     "id": 18,
@@ -213,7 +213,7 @@ const products = [
     "originalPrice": 69.99,
     "discount": 29,
     "rating": 4.4,
-    "review": 187
+    "stock": 187
   },
   {
     "id": 19,
@@ -225,7 +225,7 @@ const products = [
     "originalPrice": 79.99,
     "discount": 25,
     "rating": 4.5,
-    "review": 167
+    "stock": 167
   },
   {
     "id": 20,
@@ -237,7 +237,7 @@ const products = [
     "originalPrice": 89.99,
     "discount": 22,
     "rating": 4.6,
-    "review": 98
+    "stock": 98
   },
   {
     "id": 21,
@@ -249,7 +249,7 @@ const products = [
     "originalPrice": 44.99,
     "discount": 22,
     "rating": 4.5,
-    "review": 112
+    "stock": 112
   },
   {
     "id": 22,
@@ -261,7 +261,7 @@ const products = [
     "originalPrice": 29.99,
     "discount": 33,
     "rating": 4.1,
-    "review": 65
+    "stock": 65
   },
   {
     "id": 23,
@@ -273,7 +273,7 @@ const products = [
     "originalPrice": 34.99,
     "discount": 29,
     "rating": 4.3,
-    "review": 142
+    "stock": 142
   },
   {
     "id": 24,
@@ -285,7 +285,7 @@ const products = [
     "originalPrice": 59.99,
     "discount": 17,
     "rating": 4.2,
-    "review": 98
+    "stock": 98
   },
   {
     "id": 25,
@@ -297,7 +297,7 @@ const products = [
     "originalPrice": 119.99,
     "discount": 25,
     "rating": 4.6,
-    "review": 145
+    "stock": 145
   },
   {
     "id": 26,
@@ -309,7 +309,7 @@ const products = [
     "originalPrice": 179.99,
     "discount": 17,
     "rating": 4.5,
-    "review": 130
+    "stock": 130
   },
   {
     "id": 27,
@@ -321,7 +321,7 @@ const products = [
     "originalPrice": 19.99,
     "discount": 25,
     "rating": 4.7,
-    "review": 77
+    "stock": 77
   },
   {
     "id": 28,
@@ -333,7 +333,7 @@ const products = [
     "originalPrice": 44.99,
     "discount": 22,
     "rating": 4.3,
-    "review": 89
+    "stock": 89
   },
   {
     "id": 29,
@@ -345,7 +345,7 @@ const products = [
     "originalPrice": 22.99,
     "discount": 30,
     "rating": 4.4,
-    "review": 65
+    "stock": 65
   },
   {
     "id": 30,
@@ -357,7 +357,7 @@ const products = [
     "originalPrice": 129.99,
     "discount": 31,
     "rating": 4.5,
-    "review": 180
+    "stock": 180
   },
   {
     "id": 31,
@@ -369,7 +369,7 @@ const products = [
     "originalPrice": 69.99,
     "discount": 21,
     "rating": 4.4,
-    "review": 102
+    "stock": 102
   },
   {
     "id": 32,
@@ -381,7 +381,7 @@ const products = [
     "originalPrice": 49.99,
     "discount": 20,
     "rating": 4.3,
-    "review": 75
+    "stock": 75
   },
   {
     "id": 33,
@@ -393,7 +393,7 @@ const products = [
     "originalPrice": 159.99,
     "discount": 19,
     "rating": 4.6,
-    "review": 134
+    "stock": 134
   },
   {
     "id": 34,
@@ -405,7 +405,7 @@ const products = [
     "originalPrice": 69.99,
     "discount": 29,
     "rating": 4.2,
-    "review": 220
+    "stock": 220
   },
   {
     "id": 35,
@@ -417,7 +417,7 @@ const products = [
     "originalPrice": 349.99,
     "discount": 14,
     "rating": 4.5,
-    "review": 95
+    "stock": 95
   },
   {
     "id": 36,
@@ -429,7 +429,7 @@ const products = [
     "originalPrice": 119.99,
     "discount": 25,
     "rating": 4.4,
-    "review": 160
+    "stock": 160
   },
   {
     "id": 37,
@@ -441,7 +441,7 @@ const products = [
     "originalPrice": 159.99,
     "discount": 19,
     "rating": 4.3,
-    "review": 70
+    "stock": 70
   },
   {
     "id": 38,
@@ -453,7 +453,7 @@ const products = [
     "originalPrice": 59.99,
     "discount": 33,
     "rating": 4.2,
-    "review": 135
+    "stock": 135
   },
   {
     "id": 39,
@@ -465,19 +465,19 @@ const products = [
     "originalPrice": 79.99,
     "discount": 25,
     "rating": 4.6,
-    "review": 140
+    "stock": 140
   },
   {
     "id": 40,
     "name": "Cordless Vacuum",
-    "category": "Home Appliances",
+    "category": "Home",
     "description": "Lightweight cordless vacuum cleaner with powerful suction.",
     "image": "https://images.unsplash.com/photo-1552058544-f2b08422138a?auto=format&fit=crop&w=800&q=80",
     "price": 129.99,
     "originalPrice": 159.99,
     "discount": 19,
     "rating": 4.7,
-    "review": 190
+    "stock": 190
   },
   {
     "id": 41,
@@ -489,7 +489,7 @@ const products = [
     "originalPrice": 249.99,
     "discount": 20,
     "rating": 4.5,
-    "review": 130
+    "stock": 130
   },
   {
     "id": 42,
@@ -501,7 +501,7 @@ const products = [
     "originalPrice": 179.99,
     "discount": 17,
     "rating": 4.6,
-    "review": 85
+    "stock": 85
   },
   {
     "id": 43,
@@ -513,7 +513,7 @@ const products = [
     "originalPrice": 299.99,
     "discount": 17,
     "rating": 4.7,
-    "review": 160
+    "stock": 160
   },
   {
     "id": 44,
@@ -525,7 +525,7 @@ const products = [
     "originalPrice": 349.99,
     "discount": 14,
     "rating": 4.8,
-    "review": 100
+    "stock": 100
   },
   {
     "id": 45,
@@ -537,7 +537,7 @@ const products = [
     "originalPrice": 159.99,
     "discount": 19,
     "rating": 4.4,
-    "review": 110
+    "stock": 110
   },
   {
     "id": 46,
@@ -549,7 +549,7 @@ const products = [
     "originalPrice": 79.99,
     "discount": 25,
     "rating": 4.5,
-    "review": 145
+    "stock": 145
   },
   {
     "id": 47,
@@ -561,7 +561,7 @@ const products = [
     "originalPrice": 34.99,
     "discount": 29,
     "rating": 4.3,
-    "review": 180
+    "stock": 180
   },
   {
     "id": 48,
@@ -573,7 +573,7 @@ const products = [
     "originalPrice": 19.99,
     "discount": 25,
     "rating": 4.4,
-    "review": 95
+    "stock": 95
   },
   {
     "id": 49,
@@ -585,7 +585,7 @@ const products = [
     "originalPrice": 69.99,
     "discount": 29,
     "rating": 4.7,
-    "review": 150
+    "stock": 150
   },
   {
     "id": 50,
@@ -597,13 +597,11 @@ const products = [
     "originalPrice": 99.99,
     "discount": 20,
     "rating": 4.6,
-    "review": 180
+    "stock": 180
   }
 ];
 
 let cart = [];
-
-// document.getElementById('product-list')
 
 products.forEach((e)=>{
     document.getElementById('product-list').innerHTML += `
@@ -611,10 +609,118 @@ products.forEach((e)=>{
         <img src="${e.image}" alt="Product 1">
         <div class="product-details">
             <p class="product-name">${e.name}</p>
-            <p class="product-description">${e.description}</p>
+            <p class="product-description">${e.category}</p>
             <p class="product-price"><span class="discounted-price">Rs. ${e.originalPrice}</span><span class="original-price">Rs. ${e.price}</span></p>
-            <button class="add-to-cart">Add to Cart</button>
+            <button class="add-to-cart" onclick="addtocart('${e.id}','${e.image}','${e.name}','${e.category}','${e.originalPrice}','${e.price}')">Add to Cart</button>
         </div>
     </div>
     `
 })
+
+let categories = [];
+products.forEach((e)=>{  
+  if(!categories.includes(e.category)){
+    categories.push(e.category)
+  }
+})
+categories.forEach((e)=>{
+    document.getElementById('category').innerHTML += `<li><a href="#" onclick="searchByCategory('${e}')">${e}</a></li>`
+})
+
+function search(){
+   let value = document.getElementById('search').value
+   let search = products.filter((e)=>e.name == value)
+   document.getElementById('product-list').innerHTML = ''
+   if(search.length > 0){
+     search.forEach((e)=>{
+       document.getElementById('product-list').innerHTML += `
+       <div class="product">
+         <img src="${e.image}" alt="Product 1">
+         <div class="product-details">
+            <p class="product-name">${e.name}</p>
+            <p class="product-description">${e.category}</p>
+            <p class="product-price"><span class="discounted-price">Rs. ${e.originalPrice}</span><span class="original-price">Rs. ${e.price}</span></p>
+            <button class="add-to-cart" onclick="addtocart('${e.id}','${e.image}','${e.name}','${e.category}','${e.originalPrice}','${e.price}')">Add to Cart</button>
+        </div>
+      </div>
+    `
+    })
+   }else{
+    document.getElementById('product-list').innerHTML += `
+         <h2 style="color: red;">Item not found</h2>
+       `
+   }
+}
+
+function searchByCategory(category){
+   let search = products.filter((e)=> category === 'all' ? e.category : e.category == category)
+   document.getElementById('product-list').innerHTML = ''
+   if(search.length > 0){
+     search.forEach((e)=>{
+       document.getElementById('product-list').innerHTML += `
+       <div class="product">
+         <img src="${e.image}" alt="Product 1">
+         <div class="product-details">
+            <p class="product-name">${e.name}</p>
+            <p class="product-description">${e.category}</p>
+            <p class="product-price"><span class="discounted-price">Rs. ${e.originalPrice}</span><span class="original-price">Rs. ${e.price}</span></p>
+            <button class="add-to-cart" onclick="addtocart('${e.id}','${e.image}','${e.name}','${e.category}','${e.originalPrice}','${e.price}')">Add to Cart</button>
+        </div>
+      </div>
+    `
+    })
+   }else{
+    document.getElementById('product-list').innerHTML += `
+         <h2 style="color: red;">Item not found</h2>
+      `
+   }
+}
+
+function checkoffer(){
+    let check = products.some((e)=> e.price < 500)
+    if(check){
+       if(products.every((e)=>e.stock > 0)){
+        alert('You have great offer, some products price is under 500 and all in stock')
+       }
+    }
+}
+
+function addtocart(id,image,name,category,originalPrice,price){
+   if(!cart.includes(name)){
+      cart.push({id:id,image:image,name:name,category:category,originalPrice:originalPrice,price:price})   
+   }else{
+     alert('this product is already added into cart')
+   }
+}
+
+function carts(){
+   document.getElementById('product-list').innerHTML = ''
+   cart.forEach((e)=>{
+    if(cart.length > 0){
+       
+       document.getElementById('product-list').innerHTML += `
+       <div class="product">
+         <img src="${e.image}" alt="Product 1">
+         <div class="product-details">
+            <p class="product-name">${e.name}</p>
+            <p class="product-description">${e.category}</p>
+            <p class="product-price"><span class="discounted-price">Rs. ${e.originalPrice}</span><span class="original-price">Rs. ${e.price}</span></p>
+            <button class="add-to-cart" onclick="remove('${e.id}')">Remove</button>
+        </div>
+      </div>
+    `
+    }else{
+       document.getElementById('product-list').innerHTML += `
+         <h2 style="color: red;">Item not found</h2>
+      `
+    }
+     
+   })
+}
+
+function remove(id){
+   let removeable = cart.filter((e)=> e.id == id)
+   console.log(removeable)
+}
+
+
