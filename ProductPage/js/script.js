@@ -601,7 +601,8 @@ const products = [
   }
 ];
 
-let cart = [];
+let cart = []
+document.getElementById("count").innerText = cart.length
 
 products.forEach((e)=>{
     document.getElementById('product-list').innerHTML += `
@@ -687,7 +688,9 @@ function checkoffer(){
 
 function addtocart(id,image,name,category,originalPrice,price){
    if(!cart.includes(name)){
-      cart.push({id:id,image:image,name:name,category:category,originalPrice:originalPrice,price:price})   
+      cart.push({id:id,image:image,name:name,category:category,originalPrice:originalPrice,price:price})  
+      document.getElementById("count").innerText = cart.length
+      alert('Product added into cart successfully') 
    }else{
      alert('this product is already added into cart')
    }
@@ -695,9 +698,8 @@ function addtocart(id,image,name,category,originalPrice,price){
 
 function carts(){
    document.getElementById('product-list').innerHTML = ''
-   cart.forEach((e)=>{
     if(cart.length > 0){
-       
+      cart.forEach((e,i)=>{
        document.getElementById('product-list').innerHTML += `
        <div class="product">
          <img src="${e.image}" alt="Product 1">
@@ -705,22 +707,41 @@ function carts(){
             <p class="product-name">${e.name}</p>
             <p class="product-description">${e.category}</p>
             <p class="product-price"><span class="discounted-price">Rs. ${e.originalPrice}</span><span class="original-price">Rs. ${e.price}</span></p>
-            <button class="add-to-cart" onclick="remove('${e.id}')">Remove</button>
+            <button class="add-to-cart" onclick="remove('${i}')">Remove</button>
         </div>
       </div>
     `
+   })
     }else{
        document.getElementById('product-list').innerHTML += `
-         <h2 style="color: red;">Item not found</h2>
-      `
+          <h2 style="color: red;">Item not found</h2>
+        `
     }
-     
-   })
 }
 
 function remove(id){
-   let removeable = cart.filter((e)=> e.id == id)
-   console.log(removeable)
+  cart.splice(id,1)
+  document.getElementById("count").innerText = cart.length
+  document.getElementById('product-list').innerHTML = ''
+    if(cart.length > 0){
+      cart.forEach((e,i)=>{
+       document.getElementById('product-list').innerHTML += `
+       <div class="product">
+         <img src="${e.image}" alt="Product 1">
+         <div class="product-details">
+            <p class="product-name">${e.name}</p>
+            <p class="product-description">${e.category}</p>
+            <p class="product-price"><span class="discounted-price">Rs. ${e.originalPrice}</span><span class="original-price">Rs. ${e.price}</span></p>
+            <button class="add-to-cart" onclick="remove('${i}')">Remove</button>
+        </div>
+      </div>
+    `
+   })
+    }else{
+       document.getElementById('product-list').innerHTML += `
+          <h2 style="color: red;">Item not found</h2>
+        `
+    }
 }
 
 
