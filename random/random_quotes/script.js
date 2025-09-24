@@ -1,0 +1,62 @@
+const motivationalQuotes = [
+  { author: "Walt Disney", quote: "The way to get started is to quit talking and begin doing." },
+  { author: "Albert Einstein", quote: "Life is like riding a bicycle. To keep your balance, you must keep moving." },
+  { author: "Steve Jobs", quote: "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do." },
+  { author: "Nelson Mandela", quote: "It always seems impossible until it's done." },
+  { author: "Henry Ford", quote: "Whether you think you can, or you think you can’t – you’re right." },
+  { author: "Vince Lombardi", quote: "The only place success comes before work is in the dictionary." },
+  { author: "Thomas Edison", quote: "Genius is one percent inspiration and ninety-nine percent perspiration." },
+  { author: "Confucius", quote: "Our greatest glory is not in never falling, but in rising every time we fall." },
+  { author: "Maya Angelou", quote: "We may encounter many defeats, but we must not be defeated." },
+  { author: "Jim Rohn", quote: "The major key to your better future is you." },
+  { author: "Tony Robbins", quote: "The only limit to your impact is your imagination and commitment." },
+  { author: "John F. Kennedy", quote: "Effort and courage are not enough without purpose and direction." },
+  { author: "Eleanor Roosevelt", quote: "The future belongs to those who believe in the beauty of their dreams." },
+  { author: "Zig Ziglar", quote: "You don’t have to be great to start, but you have to start to be great." },
+  { author: "Mark Twain", quote: "The secret of getting ahead is getting started." },
+  { author: "Robert Frost", quote: "The only way out is through." },
+  { author: "Will Rogers", quote: "Even if you’re on the right track, you’ll get run over if you just sit there." },
+  { author: "Oprah Winfrey", quote: "The biggest adventure you can take is to live the life of your dreams." },
+  { author: "Muhammad Ali", quote: "Don’t count the days, make the days count." },
+  { author: "Ralph Waldo Emerson", quote: "Do not go where the path may lead, go instead where there is no path and leave a trail." },
+  { author: "Les Brown", quote: "Shoot for the moon. Even if you miss, you’ll land among the stars." },
+  { author: "Brian Tracy", quote: "You cannot start the next chapter of your life if you keep re-reading the last one." },
+  { author: "Henry David Thoreau", quote: "Go confidently in the direction of your dreams. Live the life you have imagined." },
+  { author: "Albert Schweitzer", quote: "Success is not the key to happiness. Happiness is the key to success." },
+  { author: "Benjamin Franklin", quote: "Well done is better than well said." },
+  { author: "Jim Valvano", quote: "Don’t give up, don’t ever give up." },
+  { author: "Sheryl Sandberg", quote: "If you’re offered a seat on a rocket ship, don’t ask what seat! Just get on." },
+  { author: "Bruce Lee", quote: "Absorb what is useful, discard what is not, add what is uniquely your own." },
+  { author: "Denzel Washington", quote: "I say luck is when an opportunity comes along and you’re prepared for it." },
+  { author: "Wayne Gretzky", quote: "You miss 100% of the shots you don’t take." },
+  { author: "Steve Jobs", quote: "Stay hungry, stay foolish." },
+  { author: "Helen Keller", quote: "Alone we can do so little; together we can do so much." },
+  { author: "Babe Ruth", quote: "It’s hard to beat a person who never gives up." },
+  { author: "C.S. Lewis", quote: "You are never too old to set another goal or to dream a new dream." },
+  { author: "Winston Churchill", quote: "Success is not final, failure is not fatal: It is the courage to continue that counts." },
+  { author: "Michael Jordan", quote: "I can accept failure, everyone fails at something. But I can’t accept not trying." },
+  { author: "Vince Lombardi", quote: "Perfection is not attainable, but if we chase perfection we can catch excellence." },
+  { author: "Tony Robbins", quote: "Setting goals is the first step in turning the invisible into the visible." },
+  { author: "Marcus Aurelius", quote: "The happiness of your life depends upon the quality of your thoughts." },
+  { author: "Charles R. Swindoll", quote: "Life is 10% what happens to us and 90% how we react to it." },
+  { author: "Paulo Coelho", quote: "When you want something, all the universe conspires in helping you to achieve it." },
+  { author: "Albert Einstein", quote: "Imagination is more important than knowledge." },
+  { author: "Martin Luther King Jr.", quote: "Faith is taking the first step even when you don’t see the whole staircase." },
+  { author: "Richard Branson", quote: "You don’t learn to walk by following rules. You learn by doing, and by falling over." },
+  { author: "Brene Brown", quote: "Courage starts with showing up and letting ourselves be seen." },
+  { author: "Tony Hsieh", quote: "Chase the vision, not the money; the money will end up following you." },
+  { author: "Ariana Huffington", quote: "The people who are crazy enough to think they can change the world, are the ones who do." },
+  { author: "T.D. Jakes", quote: "You may not be where you want to be, but you’re not where you used to be." },
+  { author: "Rainer Maria Rilke", quote: "Let everything happen to you. Beauty and terror. Just keep going. No feeling is final." },
+  { author: "Mahatma Gandhi", quote: "Be the change that you wish to see in the world." },
+  { author: "Simon Sinek", quote: "People don’t buy what you do, they buy why you do it." },
+  { author: "Jim Rohn", quote: "Success is nothing more than a few simple disciplines, practiced every day." }
+];
+
+getquote()
+
+function getquote(){
+  let quote = motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)]
+  document.getElementById("quote").innerHTML = `" ${quote.quote} "`
+  document.getElementById("author").innerHTML = `Author : ${quote.author}`
+}
