@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <style>
+        /* Reset some basic styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .slider {
+            display: flex;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider .item {
+            width: 100%;
+            display: block;
+            transition: transform 1s ease-in-out;
+        }
+
+        /* To make the images cover the container */
+        .slider img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Add navigation arrows */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Optional: Add some style to the dots indicator if desired */
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dots span {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">Slider Using javascript</h1>
+    <div class="slider">
+        <img class="item" src="https://cdn.pixabay.com/photo/2024/12/27/14/58/owl-9294302_1280.jpg" alt="Image 1">
+        <img class="item" src="https://www.planetcustodian.com/wp-content/uploads/2021/05/Animals-in-their-natural-environment-2.jpg" alt="Image 2">
+        <img class="item" src="https://www.w3schools.com/w3css/img_lights.jpg" alt="Image 3">
+        <img class="item" src="https://cdn.pixabay.com/photo/2016/11/21/06/53/beautiful-natural-image-1844362_640.jpg" alt="Image 4">
+        
+        <button class="prev" onclick="prev()">&#10094;</button>
+        <button class="next" onclick="next()">&#10095;</button>
+    </div>
+
+    <script>
+
+        let clickCount = 0
+         function prev(){
+            let slide =  document.querySelectorAll(".item")
+            if(clickCount > 0){
+            slide.forEach((e)=>{
+               e.style.transform += "translateX(100%)"
+            })
+            clickCount--
+           }
+         }
+
+         function next(){
+            let slide =  document.querySelectorAll(".item")
+            if(clickCount < slide.length-1){
+                slide.forEach((e)=>{
+                e.style.transform += "translateX(-100%)"
+            })
+            clickCount++
+            }else{
+                slide.forEach((e)=>{
+                e.style.transform = "translateX(0%)"
+              })
+              clickCount = 0
+            }
+         }
+         
+    </script>
+</body>
+</html>
