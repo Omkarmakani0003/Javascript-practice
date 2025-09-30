@@ -1,0 +1,40 @@
+JavaScript Array Methods – Student 
+Dataset Tasks 
+Dataset 
+const students = [ 
+  { id: 1, name: "Aarav", std: "10", marks: 78 }, 
+  { id: 2, name: "Priya", std: "9", marks: 85 }, 
+  { id: 3, name: "Rohit", std: "10", marks: 60 }, 
+  { id: 4, name: "Neha", std: "8", marks: 92 }, 
+  { id: 5, name: "Kunal", std: "9", marks: 55 }, 
+  { id: 6, name: "Meera", std: "10", marks: 88 }, 
+  { id: 7, name: "Ishaan", std: "8", marks: 73 }, 
+  { id: 8, name: "Riya", std: "9", marks: 90 }, 
+  { id: 9, name: "Varun", std: "10", marks: 65 }, 
+  { id: 10, name: "Simran", std: "8", marks: 81 }, 
+  { id: 11, name: "Ankit", std: "9", marks: 40 }, 
+  { id: 12, name: "Sanya", std: "10", marks: 95 }, 
+  { id: 13, name: "Dev", std: "8", marks: 70 }, 
+  { id: 14, name: "Tanya", std: "9", marks: 84 }, 
+  { id: 15, name: "Harsh", std: "10", marks: 55 }, 
+  { id: 16, name: "Nisha", std: "8", marks: 87 }, 
+  { id: 17, name: "Yash", std: "9", marks: 77 }, 
+  { id: 18, name: "Kiran", std: "10", marks: 66 }, 
+  { id: 19, name: "Manav", std: "8", marks: 91 }, 
+  { id: 20, name: "Alisha", std: "9", marks: 79 } 
+]; 
+
+
+10 Practice Questions with JS Methods 
+
+1. map → Get an array of only student names. 
+2. map → Create a new array of objects with name and grade status ("Pass" if marks ≥ 
+50, otherwise "Fail"). 
+3. filter → Find all students who scored above 80. 
+4. filter → Get all students from class 10 who scored below 70. 
+5. forEach → Print each student’s name with "scored X marks" message. 
+6. indexOf → Make an array of names, then find the index of "Riya". 
+7. findIndex → Find the index of the first student who has marks less than 60. 
+8. includes → Make an array of student names, check if "Tanya" is in the list. 
+9. every → Check if all students passed (marks ≥ 40). 
+10. some → Check if any student scored full marks (100).

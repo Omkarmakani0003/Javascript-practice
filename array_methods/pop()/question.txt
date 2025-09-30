@@ -1,0 +1,9 @@
+1 .Keep popping numbers from an array until the sum of removed numbers exceeds 50.
+
+2 .Pop elements one by one from an array and create a reversed array.
+
+3 .Pop elements until you encounter a specific value, then stop.
+
+4 .Pop all negative numbers from the end of an array until a positive number appears.
+
+5 .Pop the last three characters from a string (converted into an array).

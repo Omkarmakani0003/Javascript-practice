@@ -1,0 +1,5 @@
+Keep shifting elements until the first element becomes greater than 10.
+
+Shift characters from a string array until the first vowel is removed.
+
+Remove the first three elements and calculate their sum.
