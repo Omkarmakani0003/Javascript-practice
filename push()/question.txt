@@ -1,9 +1,0 @@
-1. Create an array of prime numbers. Write a program that checks numbers from 1–30 and only pushes the primes.
-
-2. Take an array of names. Push only those names that are longer than 5 letters into another array.
-
-3 .Push only odd numbers between 1–20 into an array.
-
-4 .From an array of words, push only the words that contain the letter "a".
-
-5 .Push Fibonacci sequence numbers up to 10 terms into an array.
