@@ -112,3 +112,12 @@ li{
     color: red;
     margin-bottom: 12px;
 }
+.edit{
+    background-color: green;
+    color: white;
+    padding: 7px;
+    border: none;
+}
+#new-input{
+    width: 131px;
+}
