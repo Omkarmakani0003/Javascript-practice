@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTime</title>
+</head>
+<body>
+    <div id="countOne" data-one="100000"><h1 id="count-one"></h1></div>
+    <div id="countTwo" data-two="50000"><h1 id="count-two"></h1></div>
+    <div id="countThree" data-three="35000"><h1 id="count-three"></h1></div> 
+
+    <script>
+     
+    const element_one = document.getElementById('countOne');
+    let one = element_one.dataset.one;
+     
+     let countOne = one
+     setInterval(()=>{
+         countOne--
+         document.getElementById('count-one').innerText = countOne
+        }   
+    ,0.1)
+
+    const element_two = document.getElementById('countTwo');
+    let two = element_two.dataset.two;
+     
+     let countTwo = two
+     setInterval(()=>{
+         countTwo--
+         document.getElementById('count-two').innerText = countTwo
+        }   
+    ,0.1)
+
+    const element_three = document.getElementById('countThree');
+    let three = element_three.dataset.three;
+     
+     let countThree = three
+     setInterval(()=>{
+         countThree--
+         document.getElementById('count-three').innerText = countThree
+        }   
+    ,0.1)
+
+    </script>
+</body>
+</html>
