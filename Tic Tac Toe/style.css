@@ -51,11 +51,11 @@ body{
 .restart{
     display: none;
     padding: 8px;
-    margin: 5px 0;
     border: none;
     color: white;
     background-color: darkblue;
     border-radius: 5px;
+    margin: 8px 153px;
 }
 
 /* @media only screen and (max-width: 600px) {
@@ -65,3 +65,4 @@ body{
   }
 
 } */
+
