@@ -1,0 +1,177 @@
+/* ===============================
+   RESET & BASE STYLES
+================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* ===============================
+   MAIN APP CONTAINER
+================================= */
+.app {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  width: 360px;
+  padding: 30px 25px;
+  text-align: center;
+  color: #222;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* ===============================
+   HEADER & SEARCH
+================================= */
+.top h1 {
+  font-size: 2.3em;
+  color: #fff;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+#search {
+  padding: 12px;
+  width: 70%;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1em;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+#search:focus {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+#searchBtn {
+  padding: 12px 18px;
+  margin-left: 8px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #66a6ff, #89f7fe);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#searchBtn:hover {
+  background: linear-gradient(135deg, #57a1f8, #5fe3f0);
+  transform: scale(1.05);
+}
+
+/* ===============================
+   WEATHER CARD
+================================= */
+.weather-card {
+  margin-top: 25px;
+  padding: 25px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease-out;
+  display: none;
+}
+
+.icon-wrap {
+  margin-bottom: 15px;
+}
+
+#icon {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease;
+  margin: 0 auto;
+}
+
+.weather-card:hover #icon {
+  transform: scale(1.1);
+}
+
+.temp {
+  font-size: 3.5em;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.meta {
+  margin-top: 10px;
+}
+
+#location {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #4a90e2;
+}
+
+.details {
+  margin-top: 8px;
+  font-size: 0.95em;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ===============================
+   MESSAGE / STATUS
+================================= */
+#msg {
+  font-size: 0.95em;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 20px;
+}
+
+/* ===============================
+   ANIMATIONS
+================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================= */
+@media (max-width: 420px) {
+  .app {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #search {
+    width: 65%;
+  }
+
+  .temp {
+    font-size: 2.8em;
+  }
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="./style.css">
+  <title>Weather App</title>
+</head>
+<body id="body">
+  <main class="app" role="main">
+    <div class="top">
+      <h1>Weather</h1>
+        <input id="search" type="text" placeholder="Enter city (e.g. London)" aria-label="City name">
+        <button id="searchBtn" onclick="search()">Search</button>
+    </div>
+
+    <section id="output" aria-live="polite">
+      <div class="weather-card" id="card" style="display:none;">
+        <div class="icon-wrap" id="iconWrap">
+          <img id="icon" src="" alt="weather icon" width="56" height="56" style="display:block">
+        </div>
+        <div class="weather-main">
+          <div>
+            <div class="temp" id="temp"></div>
+          </div>
+          <div class="meta">
+            <div id="location">--</div>
+            <div class="details"><span id="feels">Feels: --</span><span id="hum">| Hum: --%</span><span id="wind">| Wind: -- m/s</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p id="msg" class="small" style="margin-top:14px; color:var(--muted);">Type a city and press <strong>Search</strong>.</p>
+    </section>
+  </main>
+  <script src="./script.js"></script>
+</body>
+</html>
