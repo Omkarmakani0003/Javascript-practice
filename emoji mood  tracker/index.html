@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Emoji mood tracker</title>
+</head>
+<body>
+    <h1>Emoji mood tracker</h1>
+    <div class="mood-buttons">
+        <button onclick="check('Happy')">😊</button>
+        <button onclick="check('Sad')">😞</button>
+        <button onclick="check('Smart')">😎</button>
+        <button onclick="check('Angry')">😡</button>
+        <button onclick="check('Lazzy')">😴</button>
+    </div>
+    <div class="mood-list" id="mood-log">
+        <!-- <p>4:00 pm 😊 - Happy</p> -->
+    </div>
+    <div class="details">
+        <h3 class="total-entries">Total Entries :<span id="total-entries">0</span></h3>
+        <h3 class="most-frequent-mood">Most frequent Mood : <span id="most-frequent-mood"> --</span></h3>
+    </div>
+    
+    <button class="clear-btn" onclick="remove()">Clear</button>
+
+    <script src="./script.js"></script>
+</body>
+</html>
