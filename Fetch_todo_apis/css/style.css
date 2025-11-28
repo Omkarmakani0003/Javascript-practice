@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6e7cfa, #9d94d7);
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+    height: 100vh;
+}
+
+.todo-container {
+    background-color: #fff;
+    width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    height: auto;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#task-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#add-task-btn {
+    padding: 10px;
+    background-color: #6e7cfa;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#add-task-btn:hover {
+    background-color: #5c6cfd;
+}
+
+#todo-list {
+    list-style-type: none;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item span {
+    flex: 1;
+    text-align: left;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+.todoList{
+    width: 100%;
+    border: 1px solid #ccc;
+    height: 303px;
+    padding: 10px 0
+}
+ul{
+    height: 100%;
+    overflow: auto;
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 11px;
+    margin: 10px 0
+}
+.remove{
+    background-color: #fa7878;
+    color: white;
+    padding: 10px;
+    border: none;
+}
+.errorMsg{
+    color: red;
+    margin-bottom: 12px;
+}
+.successMsg{
+    color: rgb(7, 131, 0);
+    margin-bottom: 12px;
+}
+.edit{
+    background-color: #4ca54c;
+    color: white;
+    padding: 10px;
+    border: none;
+}
+#new-input{
+    width: 240px;
+}
