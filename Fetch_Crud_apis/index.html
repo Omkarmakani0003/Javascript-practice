@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form">
+        <input type="text" id="name" placeholder="student name">
+        <input type="number" id="rollno" placeholder="Roll no">
+        <button onclick="addNew()" id="button">Add new</button>
+    </div>
+    <div class="list">
+        <table>
+          <thead>
+            <tr>
+                <th>id</th>
+                <th>Roll no</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+           </thead>
+           <tbody id="data">
+            
+           </tbody>  
+        </table>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

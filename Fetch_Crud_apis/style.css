@@ -1,0 +1,108 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light background color */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items at the top */
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding-top: 20px;
+}
+
+/* Form Container */
+.form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin: 0 auto
+}
+
+/* Input Fields */
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Placeholder Styling */
+input::placeholder {
+    color: #888; /* Lighter color for placeholder text */
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Table Container */
+.list {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Table Header Styling */
+th {
+    background-color: #f4f4f4;
+    text-align: left;
+    padding: 10px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Table Cell Styling */
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Table Row Hover Effect */
+tr:hover {
+    background-color: #f9f9f9;
+}
+.deleteBtn{
+    background-color: red!important;
+}
+
+/* Responsive Design for smaller screens */
+@media screen and (max-width: 600px) {
+    .form {
+        width: 90%;
+    }
+
+    .list {
+        width: 90%;
+    }
+}
