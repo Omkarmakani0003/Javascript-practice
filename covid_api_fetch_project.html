@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>COVID-19 Stats — API Fetch Demo</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;color-scheme:dark}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Arial;background:linear-gradient(180deg,#071428 0%,#071124 100%);color:#e6eef6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+    .container{width:100%;max-width:980px}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    h1{font-size:20px;margin:0}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .controls{display:flex;gap:8px;align-items:center}
+    input[type=text]{padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit;min-width:220px}
+    button{padding:10px 14px;border-radius:8px;border:none;background:var(--accent);color:#032;cursor:pointer;font-weight:600}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+    .stat{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);text-align:center}
+    .stat h2{margin:0;font-size:18px}
+    .stat p{margin:6px 0 0;color:var(--muted)}
+    .table-wrap{margin-top:16px;overflow:auto}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px 8px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.03)}
+    th{font-size:13px;color:var(--muted)}
+    .loader{display:inline-block;padding:6px 10px;background:rgba(255,255,255,0.03);border-radius:999px}
+    footer{margin-top:12px;color:var(--muted);font-size:13px}
+    @media (max-width:680px){.grid{grid-template-columns:1fr}.controls{flex-direction:column;align-items:stretch}input[type=text]{width:100%}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>COVID-19 Stats — API Fetch Demo</h1>
+      <div class="controls">
+        <input id="countryInput" type="text" placeholder="Type country (e.g. India) and press Search..." />
+        <button id="searchBtn">Search</button>
+        <button id="globalBtn">Global</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <div id="statusHeader">Data source: <strong>disease.sh</strong> API</div>
+
+      <div id="mainContent">
+        <div class="grid" id="statsGrid">
+          <div class="stat"><h2 id="confirmed">—</h2><p>Confirmed</p></div>
+          <div class="stat"><h2 id="recovered">—</h2><p>Recovered</p></div>
+          <div class="stat"><h2 id="deaths">—</h2><p>Deaths</p></div>
+        </div>
+
+        <div class="table-wrap">
+          <table id="countryTable">
+            <thead>
+              <tr><th>Country</th><th>Confirmed</th><th>Recovered</th><th>Deaths</th></tr>
+            </thead>
+            <tbody>
+              <!-- rows injected here -->
+            </tbody>
+          </table>
+        </div>
+
+        <footer>
+          Tip: leave input blank and press "Global" to load top 10 countries by cases.
+        </footer>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    /*
+      Single-file COVID-19 fetch demo (frontend only).
+      API used: https://disease.sh (no auth required, CORS-friendly)
+      Endpoints used:
+        - Global: https://disease.sh/v3/covid-19/all
+        - Country: https://disease.sh/v3/covid-19/countries/{country}
+        - All countries: https://disease.sh/v3/covid-19/countries?sort=cases
+    */
+
+    const el = id => document.getElementById(id);
+    const confirmedEl = el('confirmed');
+    const recoveredEl = el('recovered');
+    const deathsEl = el('deaths');
+    const countryTableBody = document.querySelector('#countryTable tbody');
+    const statusHeader = el('statusHeader');
+
+    const API_ROOT = 'https://disease.sh/v3/covid-19';
+
+    function fmt(n){
+      if (n === undefined || n === null) return '—';
+      return n.toLocaleString();
+    }
+
+    function setLoading(on){
+      statusHeader.innerHTML = on ? 'Loading <span class="loader">fetching…</span>' : 'Data source: <strong>disease.sh</strong> API';
+    }
+
+    async function fetchGlobal(){
+      setLoading(true);
+      try{
+        const res = await fetch(API_ROOT + '/all');
+        if (!res.ok) throw new Error('Network response not ok');
+        const data = await res.json();
+        confirmedEl.textContent = fmt(data.cases);
+        recoveredEl.textContent = fmt(data.recovered);
+        deathsEl.textContent = fmt(data.deaths);
+        // Also load top countries
+        await fetchTopCountries();
+      }catch(err){
+        console.error(err);
+        alert('Failed to fetch global data. See console for details.');
+      }finally{setLoading(false)}
+    }
+
+    async function fetchCountry(country){
+      if (!country) return fetchGlobal();
+      setLoading(true);
+      try{
+        const encoded = encodeURIComponent(country.trim());
+        const res = await fetch(API_ROOT + '/countries/' + encoded + '?strict=true');
+        if (res.status === 404){
+          alert('Country not found. Try a different name (e.g. United States, India, Brazil).');
+          return;
+        }
+        if (!res.ok) throw new Error('Network response not ok');
+        const data = await res.json();
+        confirmedEl.textContent = fmt(data.cases);
+        recoveredEl.textContent = fmt(data.recovered);
+        deathsEl.textContent = fmt(data.deaths);
+
+        // show table with single country row
+        countryTableBody.innerHTML = '';
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${data.country}</td><td>${fmt(data.cases)}</td><td>${fmt(data.recovered)}</td><td>${fmt(data.deaths)}</td>`;
+        countryTableBody.appendChild(tr);
+      }catch(err){
+        console.error(err);
+        alert('Failed to fetch country data. See console for details.');
+      }finally{setLoading(false)}
+    }
+
+    async function fetchTopCountries(limit=10){
+      setLoading(true);
+      try{
+        const res = await fetch(API_ROOT + '/countries?sort=cases');
+        if (!res.ok) throw new Error('Network response not ok');
+        const data = await res.json();
+        countryTableBody.innerHTML = '';
+        data.slice(0, limit).forEach(c => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td>${c.country}</td><td>${fmt(c.cases)}</td><td>${fmt(c.recovered)}</td><td>${fmt(c.deaths)}</td>`;
+          countryTableBody.appendChild(tr);
+        });
+      }catch(err){
+        console.error(err);
+        alert('Failed to fetch countries list. See console for details.');
+      }finally{setLoading(false)}
+    }
+
+    // Wire up UI
+    el('searchBtn').addEventListener('click', ()=>fetchCountry(el('countryInput').value));
+    el('countryInput').addEventListener('keydown', e=>{ if(e.key==='Enter') fetchCountry(el('countryInput').value) });
+    el('globalBtn').addEventListener('click', ()=>{ el('countryInput').value=''; fetchGlobal() });
+
+    // Initial load: global
+    fetchGlobal();
+  </script>
+</body>
+</html>
